@@ -22,19 +22,18 @@ import { UpdateUserPatchTDO } from './dto/update-patch-user.dto';
 import { UpdateUserPutTDO } from './dto/update-put-user.dto';
 import { UserService } from './user.service';
 
+@Roles(Role.Admin)
 @UseGuards(AuthGuard, RoleGuard)
 @UseInterceptors(LogInterceptors)
 @Controller('users')
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  @Roles(Role.Admin)
   @Post()
   async create(@Body() data: CreateUserTDO) {
     return this.userService.create(data);
   }
 
-  @Roles(Role.Admin)
   @Get()
   async list() {
     return this.userService.list();
@@ -45,18 +44,15 @@ export class UserController {
     return this.userService.show(id);
   }
 
-  @Roles(Role.Admin)
   @Put(':id')
   async update(@ParamId() @Body() data: UpdateUserPutTDO, id: number) {
     return this.userService.update(id, data);
   }
-  @Roles(Role.Admin)
   @Patch(':id')
   async updatePartial(@Body() data: UpdateUserPatchTDO, @ParamId() id: number) {
     return this.userService.updatePartial(id, data);
   }
 
-  @Roles(Role.Admin)
   @Delete(':id')
   async delete(@ParamId() id: number) {
     return this.userService.delete(id);
