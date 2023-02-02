@@ -38,9 +38,6 @@ export class UserService {
     const salt = await bcrypt.genSalt();
     password = await bcrypt.hash(password, salt);
 
-    if (!birthAt) {
-      birthAt = null;
-    }
     return this.prisma.user.update({
       data: {
         email,
@@ -72,7 +69,7 @@ export class UserService {
     }
     if (password) {
       const salt = await bcrypt.genSalt();
-      data.password = await bcrypt.hash(data.password, salt);
+      data.password = await bcrypt.hash(password, salt);
     }
     if (role) {
       data.role = role;
