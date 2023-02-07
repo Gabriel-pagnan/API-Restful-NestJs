@@ -11,12 +11,12 @@ import {
   Put,
   UseInterceptors,
 } from '@nestjs/common';
-import { ParamId } from 'src/decorators/param-id.decorator';
-import { Roles } from 'src/decorators/roles.decorator';
-import { Role } from 'src/enums/role.enum';
-import { AuthGuard } from 'src/guards/auth.guard';
-import { RoleGuard } from 'src/guards/role.guard';
-import { LogInterceptors } from 'src/interceptors/log.interceptors';
+import { ParamId } from '../decorators/param-id.decorator';
+import { Roles } from '../decorators/roles.decorator';
+import { Role } from '../enums/role.enum';
+import { AuthGuard } from '../guards/auth.guard';
+import { RoleGuard } from '../guards/role.guard';
+import { LogInterceptors } from '../interceptors/log.interceptors';
 import { CreateUserTDO } from './dto/create-user.dto';
 import { UpdateUserPatchTDO } from './dto/update-patch-user.dto';
 import { UpdateUserPutTDO } from './dto/update-put-user.dto';

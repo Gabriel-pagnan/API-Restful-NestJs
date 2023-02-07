@@ -10,17 +10,17 @@ import {
 } from '@nestjs/common';
 import { UploadedFile, UploadedFiles } from '@nestjs/common/decorators';
 import { FileInterceptor, FilesInterceptor } from '@nestjs/platform-express';
-import { User } from 'src/decorators/user.decorator';
-import { AuthGuard } from 'src/guards/auth.guard';
-import { UserService } from 'src/user/user.service';
 import { AuthService } from './auth.service';
 import { AuthForgetDTO } from './dto/auth-forget.dto';
 import { AuthLoginDTO } from './dto/auth-login.dto';
 import { AuthRegisterDTO } from './dto/auth-register.dto';
 import { AuthResetDTO } from './dto/auth-reset.dto';
 import { join } from 'path';
-import { FileService } from 'src/file/file.service';
 import { BadRequestException } from '@nestjs/common/exceptions/bad-request.exception';
+import { FileService } from '../file/file.service';
+import { UserService } from '../user/user.service';
+import { AuthGuard } from '../guards/auth.guard';
+import { User } from '../decorators/user.decorator';
 
 @Controller('auth')
 export class AuthController {
