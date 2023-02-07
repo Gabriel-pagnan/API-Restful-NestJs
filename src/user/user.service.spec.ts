@@ -1,7 +1,5 @@
 import { TestingModule, Test } from '@nestjs/testing';
-import { Role } from '../enums/role.enum';
 import { userPrismaServiceMock } from '../testing/user-prisma-service.mock';
-import { CreateUserTDO } from './dto/create-user.dto';
 import { UserService } from './user.service';
 
 describe('UserService', () => {

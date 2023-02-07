@@ -8,8 +8,8 @@ import {
   UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
-import { UploadedFile, UploadedFiles } from '@nestjs/common/decorators';
-import { FileInterceptor, FilesInterceptor } from '@nestjs/platform-express';
+import { UploadedFile } from '@nestjs/common/decorators';
+import { FileInterceptor } from '@nestjs/platform-express';
 import { AuthService } from './auth.service';
 import { AuthForgetDTO } from './dto/auth-forget.dto';
 import { AuthLoginDTO } from './dto/auth-login.dto';
